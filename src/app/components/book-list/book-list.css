@@ -1,0 +1,161 @@
+/* Contenedor Principal */
+.container {
+  padding: 20px;
+  background-color: #ffffff;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  color: #4a148c; /* Morado oscuro */
+  border-bottom: 3px solid #7b1fa2;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+/* Estilo de la Tabla */
+.table-wrapper {
+  box-shadow: 0 4px 15px rgba(74, 20, 140, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  overflow-x: auto; 
+}
+
+.book-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  table-layout: fixed; /* Mantiene el orden de las columnas */
+}
+
+.book-table thead {
+  background-color: #7f49a1; /* Morado vibrante */
+  color: #ffffff;
+}
+
+.book-table th, .book-table td {
+  padding: 12px 15px;
+  text-align: left;
+  word-wrap: break-word;
+  vertical-align: middle; /* Alineación central para que el Autor no flote */
+}
+
+.book-table th {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+/* --- AJUSTE DE MEDIDAS POR COLUMNA --- */
+.book-table th:nth-child(1), .book-table td:nth-child(1) { width: 85px; }  /* Portada */
+.book-table th:nth-child(2), .book-table td:nth-child(2) { width: 180px; } /* Nombre */
+.book-table th:nth-child(3), .book-table td:nth-child(3) { width: 110px; } /* Rating */
+.book-table th:nth-child(4), .book-table td:nth-child(4) { width: 140px; } /* Género */
+.book-table th:nth-child(5), .book-table td:nth-child(5) { width: 150px; } /* Autor */
+
+/* Columna de Descripción: Ajustada para que no empuje al Autor */
+.col-desc {
+  width: 280px !important;
+}
+
+.desc-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4; /* Añade esta línea sin el prefijo -webkit- */
+  overflow: hidden;
+
+  font-size: 0.85rem;
+  color: #4a4a4a;
+  line-height: 1.4;
+}
+/* Columna de Detalles Técnicos */
+.tech-details {
+  width: 230px !important; 
+}
+
+.tech-details small {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  display: block;
+  color: #333;
+}
+
+/* Columna de Estado */
+.book-table th:nth-child(8), .book-table td:nth-child(8) { width: 110px; } 
+
+/* --- ESTILOS VISUALES --- */
+
+.book-table td {
+  border-bottom: 1px solid #f3e5f5;
+}
+
+.book-table tbody tr:hover {
+  background-color: #f8f3fc;
+}
+
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tag {
+  background-color: #ede7f6;
+  color: #8351da;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: bold;
+  border: 1px solid #d1c4e9;
+}
+
+.status-badge {
+  background-color: #9575cd;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+}
+
+.status-badge.terminado {
+  background-color: #6933aa;
+}
+
+.book-thumb {
+  width: 65px;
+  height: auto;
+  border-radius: 4px;
+  border: 2px solid #ce93d8;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.stars {
+  color: #ab47bc;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.text-secondary {
+  color: #9c27b0;
+  font-size: 0.8rem;
+  font-style: italic;
+  display: block;
+}
+.btn-salir {
+  background-color: #f44336; /* Rojo para alertar que es salir */
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  float: right; /* Lo pone a la derecha */
+}
+
+.btn-salir:hover {
+  background-color: #d32f2f;
+}
