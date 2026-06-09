@@ -159,3 +159,37 @@ h1 {
 .btn-salir:hover {
   background-color: #d32f2f;
 }
+
+.top-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.action-btn,
+.logout-btn {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.action-btn {
+  background: #7f49a1;
+}
+
+.action-btn:hover {
+  background: #4a148c;
+}
+
+.logout-btn {
+  background: #dc3545;
+}
+
+.logout-btn:hover {
+  background: #b02a37;
+}
