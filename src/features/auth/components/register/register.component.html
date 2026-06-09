@@ -1,0 +1,89 @@
+<div class="login-container">
+  <div class="login-box">
+    <h1>Crear cuenta</h1>
+    <p>Regístrate para gestionar tus libros</p>
+
+    <form (ngSubmit)="sendRegister()">
+
+      <div class="input-group">
+        <label>Nombre</label>
+        <input
+          type="text"
+          placeholder="Nombre completo"
+          [(ngModel)]="nombre"
+          name="nombre"
+          required>
+      </div>
+
+      <div class="input-group">
+        <label>Correo electrónico</label>
+        <input
+          type="email"
+          placeholder="correo@ejemplo.com"
+          [(ngModel)]="email"
+          name="email"
+          required>
+      </div>
+
+      <div class="input-group">
+        <label>Contraseña</label>
+        <input
+          type="password"
+          placeholder="••••••••"
+          [(ngModel)]="password"
+          name="password"
+          required>
+      </div>
+
+      <div class="input-group">
+        <label>Teléfono</label>
+        <input
+          type="text"
+          placeholder="Teléfono"
+          [(ngModel)]="telefono"
+          name="telefono">
+      </div>
+
+      <div class="input-group">
+        <label>Biografía</label>
+        <textarea
+          placeholder="Cuéntanos sobre ti..."
+          [(ngModel)]="biografia"
+          name="biografia">
+        </textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="btn-login"
+        [disabled]="loading">
+
+        {{ loading ? 'Registrando...' : 'Registrarse' }}
+
+      </button>
+
+      @if (errorMessage) {
+        <div class="message error">
+          ⚠️ {{ errorMessage }}
+        </div>
+      }
+
+      @if (successMessage) {
+        <div class="message success">
+          ✅ {{ successMessage }}
+        </div>
+      }
+
+      <div style="margin-top: 20px; text-align: center;">
+        <a
+          routerLink="/login"
+          style="color: #7b4f9d; text-decoration: none; font-size: 14px; font-family: sans-serif; font-weight: 600;">
+
+          ¿Ya tienes cuenta? Inicia sesión
+
+        </a>
+      </div>
+
+    </form>
+  </div>
+</div>

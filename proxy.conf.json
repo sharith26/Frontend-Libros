@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://backend-libros-vdpv.onrender.com",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": "/api"
+    }
+  }
+}

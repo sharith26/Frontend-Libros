@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { BookService } from '../models/services/book'; 
+import { BookService } from '../../services/book.service';
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core'; 
 import { Router } from '@angular/router';
 
@@ -7,13 +7,12 @@ import { Router } from '@angular/router';
   selector: 'app-book-list',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './book-list.html',
-  styleUrl: './book-list.css',
+  templateUrl: './book-list.component.html',
+  styleUrl: './book-list.component.css',
 })
 export class BookList implements OnInit {
   libros: any[] = []; 
 
-  // 2. <--- NUEVO: Agregar Router al constructor
   constructor(
     private bookService: BookService, 
     private cdr: ChangeDetectorRef,
@@ -27,11 +26,10 @@ export class BookList implements OnInit {
         this.cdr.detectChanges();
         console.log('Datos cargados:', this.libros);
       },
-      error: (err) => console.error('Error al traer libros:', err)
+      error: (err:any) => console.error('Error al traer libros:', err)
     });
   }
 
-  // 3. <--- NUEVO: Función para volver al Login
   salir(): void {
     this.router.navigate(['/']); 
   }
@@ -42,4 +40,4 @@ formatRating(rating: number): string {
     const halfStar = rating % 1 !== 0 ? '½' : '';
     return fullStars + halfStar;
   }
-} // <--- Esta llave cierra la clase BookList. Asegúrate de que no haya otra después.
+} 

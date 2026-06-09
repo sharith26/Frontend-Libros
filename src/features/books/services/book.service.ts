@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BookService {
-  // Pon aquí la URL que usas en Postman para el GET de libros
   private apiUrl = 'https://backend-libros-vdpv.onrender.com/api/v1/books'; 
 
   constructor(private http: HttpClient) { }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router'; // Asegúrate de tener esta línea
+import { RouterOutlet } from '@angular/router'; 
 
 @Component({
   selector: 'app-root',
