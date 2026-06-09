@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { BookService } from '../../services/book'; 
+import { BookService } from '../models/services/book'; 
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core'; 
-import { Router } from '@angular/router'; // 1. <--- NUEVO: Importar Router
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-list',

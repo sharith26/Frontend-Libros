@@ -1,6 +1,7 @@
+import 'zone.js';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { AppComponent } from './app/app'; // Asegúrate que aquí diga AppComponent
-import { appConfig } from './app/app.config';
+import { appConfig } from './app.config';
+import { AppComponent } from '../app'; // Un solo punto (./) porque main.ts está en src/
 
-bootstrapApplication(AppComponent, appConfig) // Y aquí también
+bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));

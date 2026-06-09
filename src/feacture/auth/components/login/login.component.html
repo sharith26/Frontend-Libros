@@ -1,0 +1,46 @@
+<div class="login-container">
+  <div class="login-box">
+    <h1>Mi biblioteca</h1>
+    <p>Inicia sesión para gestionar tus libros</p>
+
+    <form class="login-form">
+      <div class="input-group">
+        <label>Usuario</label>
+        <input type="text" placeholder="Usuario" [(ngModel)]="email" name="email">
+      </div>
+      
+      <div class="input-group">
+        <label>Contraseña</label>
+        <input type="password" placeholder="••••••••" [(ngModel)]="password" name="password">
+      </div>
+
+      <button type="button" class="btn-login" (click)="sendLogin()">Entrar</button>
+
+      <div class="divider">
+        <span>o continúa con</span>
+      </div>
+
+      <div class="social-login">
+        <button type="button" class="btn-social" (click)="loginConGoogle()">
+          Google
+        </button>
+        <button type="button" class="btn-social" (click)="loginConFacebook()">
+          Facebook
+        </button>
+      </div>
+
+      @if (errorMessage) {
+        <div style="color: #dc3545; font-weight: bold; margin-top: 20px; text-align: center; font-family: sans-serif; font-size: 14px;">
+          ⚠️ {{ errorMessage }}
+        </div>
+      }
+
+      <div style="margin-top: 20px; text-align: center;">
+        <a routerLink="/registro" style="color: #7b4f9d; text-decoration: none; font-size: 14px; font-family: sans-serif; font-weight: 600;">
+          ¿No tienes cuenta? Regístrate aquí
+        </a>
+      </div>
+
+    </form>
+  </div>
+</div>

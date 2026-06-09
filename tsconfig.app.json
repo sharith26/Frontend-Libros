@@ -8,8 +8,8 @@
   },
   "include": [
     "src/**/*.ts"
-  ],
+, "app.routes.ts", "app.spec.ts", "app.ts"  ],
   "exclude": [
-    "src/**/*.spec.ts"
+    "**/*.spec.ts"
   ]
 }
