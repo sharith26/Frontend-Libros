@@ -2,11 +2,13 @@ import { CommonModule } from '@angular/common';
 import { BookService } from '../../services/book.service';
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core'; 
 import { Router } from '@angular/router';
+import { RouterLink } from '@angular/router';
+import { NavbarComponent } from '../../../../app/shared/components/navbar/navbar.component';
 
 @Component({
   selector: 'app-book-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, NavbarComponent],
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.css',
 })

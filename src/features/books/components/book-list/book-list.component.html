@@ -1,77 +1,93 @@
-<div class="container">
+<div class="books-page">
 
-  <div class="top-actions">
-    <button routerLink="/dashboard" class="action-btn">
-      Dashboard
-    </button>
-
-    <button routerLink="/profile" class="action-btn">
-      Perfil
-    </button>
-
-    <button (click)="salir()" class="logout-btn">
-      Cerrar Sesión
-    </button>
+  <div class="hero-section">
+    <h1>Mi Biblioteca</h1>
+    <p>Explora tu colección personal de libros</p>
   </div>
 
-  <h1>Mi Biblioteca</h1>
+  <div class="container">
 
-  <div class="table-wrapper">
-    <table class="book-table">
-      <thead>
-        <tr>
-          <th>Portada</th>
-          <th>Nombre / Título Original</th>
-          <th>Rating</th>
-          <th>Género</th>
-          <th>Autor</th>
-          <th>Descripción</th>
-          <th>Detalles Técnicos</th>
-          <th>Estado</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (libro of libros; track libro._id) {
+    <div class="table-wrapper">
+      <table class="book-table">
+        <thead>
           <tr>
-            <td>
-              <img [src]="libro.ImagenUrl || 'assets/default-book.png'" alt="Portada" class="book-thumb">
-            </td>
-            <td>
-              <div class="book-main-info">
-                <strong>{{ libro.Nombre }}</strong>
-                <small class="text-secondary">{{ libro.TituloIngles }}</small>
-              </div>
-            </td>
-            <td>
-              <span class="stars">{{ formatRating(libro.Rating) }}</span>
-            </td>
-            <td>
-              <div class="tag-group">
-                @for (g of libro.Genero; track g) {
-                  <span class="tag" [class]="g.toLowerCase()">{{ g }}</span>
-                }
-              </div>
-            </td>
-            <td>{{ libro.Autor }}</td>
-            <td class="col-desc">
-              <p class="desc-text">{{ libro.Descripcion }}</p>
-            </td>
-            <td class="tech-details">
-              <small><b>ISBN:</b> {{ libro.ISBN }}</small><br>
-              <small><b>Págs:</b> {{ libro.Paginas }}</small><br>
-              <small><b>Publicado:</b> {{ libro.FechaPublicacion | date:'dd/MM/yyyy' }}</small><br>
-              <small><b>Idioma:</b> {{ libro.Idioma }}</small><br>
-              <small><b>Formato:</b> {{ libro.Formato }} ({{ libro.Tapa }})</small>
-            </td>
-            <td>
-              <span class="status-badge" [class.terminado]="libro.Estado === 'Terminado'">
-                {{ libro.Estado }}
-              </span>
-            </td>
+            <th>Portada</th>
+            <th>Nombre / Título Original</th>
+            <th>Rating</th>
+            <th>Género</th>
+            <th>Autor</th>
+            <th>Descripción</th>
+            <th>Detalles Técnicos</th>
+            <th>Estado</th>
           </tr>
-        }
-      </tbody>
-    </table>
+        </thead>
+
+        <tbody>
+          @for (libro of libros; track libro._id) {
+            <tr>
+              <td>
+                <img
+                  [src]="libro.ImagenUrl || 'assets/default-book.png'"
+                  alt="Portada"
+                  class="book-thumb">
+              </td>
+
+              <td>
+                <div class="book-main-info">
+                  <strong>{{ libro.Nombre }}</strong>
+                  <small class="text-secondary">
+                    {{ libro.TituloIngles }}
+                  </small>
+                </div>
+              </td>
+
+              <td>
+                <span class="stars">
+                  {{ formatRating(libro.Rating) }}
+                </span>
+              </td>
+
+              <td>
+                <div class="tag-group">
+                  @for (g of libro.Genero; track g) {
+                    <span class="tag" [class]="g.toLowerCase()">
+                      {{ g }}
+                    </span>
+                  }
+                </div>
+              </td>
+
+              <td>{{ libro.Autor }}</td>
+
+              <td class="col-desc">
+                <p class="desc-text">
+                  {{ libro.Descripcion }}
+                </p>
+              </td>
+
+              <td class="tech-details">
+                <small><b>ISBN:</b> {{ libro.ISBN }}</small><br>
+                <small><b>Págs:</b> {{ libro.Paginas }}</small><br>
+                <small><b>Publicado:</b> {{ libro.FechaPublicacion | date:'dd/MM/yyyy' }}</small><br>
+                <small><b>Idioma:</b> {{ libro.Idioma }}</small><br>
+                <small><b>Formato:</b> {{ libro.Formato }} ({{ libro.Tapa }})</small>
+              </td>
+
+              <td>
+                <span
+                  class="status-badge"
+                  [class.terminado]="libro.Estado === 'Terminado'">
+                  {{ libro.Estado }}
+                </span>
+              </td>
+
+            </tr>
+          }
+        </tbody>
+
+      </table>
+    </div>
+
   </div>
 
 </div>

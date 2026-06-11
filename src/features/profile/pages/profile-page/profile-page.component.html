@@ -1,2 +1,35 @@
-<h1>Perfil</h1>
-<p>Información del usuario.</p>
+<header class="navbar">
+  <div class="logo">Mi Biblioteca</div>
+  <nav class="menu">
+    <button routerLink="/libros" class="menu-btn">📚 Libros</button>
+    <button routerLink="/dashboard" class="menu-btn">📊 Dashboard</button>
+    <button routerLink="/perfil" class="menu-btn">👤 Perfil</button>
+  </nav>
+  <button class="logout-btn" (click)="salir()">Cerrar sesión</button>
+</header>
+
+<div class="perfil-hero">
+  <div class="hero-content">
+    <div class="perfil-icon">👤</div>
+    <h1>Mi Perfil</h1>
+    <p>Tu información personal y configuración de cuenta.</p>
+  </div>
+
+  <div class="perfil-card">
+    <div class="perfil-avatar">👤</div>
+    <div class="perfil-info">
+      <div class="info-item">
+        <label>Nombre</label>
+        <p>Usuario</p>
+      </div>
+      <div class="info-item">
+        <label>Email</label>
+        <p>usuario@ejemplo.com</p>
+      </div>
+      <div class="info-item">
+        <label>Libros registrados</label>
+        <p>{{ totalLibros }}</p>
+      </div>
+    </div>
+  </div>
+</div>

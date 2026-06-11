@@ -1,10 +1,103 @@
-.dashboard {
-  padding: 30px;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #1a1a2e;
+  color: white;
 }
 
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,.1);
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #e0aaff;
 }
+
+.menu { display: flex; gap: 1rem; }
+
+.menu-btn {
+  background: transparent;
+  border: 1px solid #e0aaff;
+  color: #e0aaff;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.menu-btn:hover {
+  background: #e0aaff;
+  color: #1a1a2e;
+}
+
+.logout-btn {
+  background: #c9184a;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.dashboard-hero {
+  min-height: calc(100vh - 64px);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.hero-content {
+  text-align: center;
+  color: white;
+}
+
+.dash-icon { font-size: 5rem; margin-bottom: 1rem; }
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  color: #e0aaff;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #c77dff;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  width: 100%;
+}
+.dash-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(224, 170, 255, 0.3);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  color: white;
+  transition: transform 0.2s;
+}
+
+.dash-card:hover { transform: translateY(-4px); }
+.dash-card span { font-size: 2.5rem; }
+.dash-card h3 { color: #e0aaff; margin: 0.5rem 0; }
+.dash-card p { color: #c77dff; font-size: 0.9rem; margin-bottom: 1rem; }
+
+.btn-card {
+  background: linear-gradient(135deg, #7b2ff7, #c77dff);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn-card:hover { transform: scale(1.05); }
